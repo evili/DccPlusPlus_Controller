@@ -69,7 +69,7 @@
   RouteButton      rButton10,rButton11,rButton12,rButton13,rButton14;
   RouteButton      rButtonR1,rButtonR2,rButton15,rButton16,rButton17,rButtonSpiral,rButtonReset,rButtonBridge;  
 
-  CabButton        cab8601,cab54,cab1202,cab1506,cab622,cab2004,cab6021;
+  CabButton        cab276;
   
 ////////////////////////////////////////////////////////////////////////
 //  Initialize --- configures everything!
@@ -295,69 +295,11 @@
 
     throttleA=new Throttle(tAx,tAy,1.3);
     
-    cab2004 = new CabButton(tAx-125,tAy-150,50,30,150,15,2004,throttleA);
-    cab2004.setThrottleDefaults(100,50,-50,-45);
-    cab2004.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab2004.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab2004.setFunction(35,45,60,22,60,10,1,"Tailight",ButtonType.NORMAL,CabFunction.R_LIGHT);
-    
-    cab622 = new CabButton(tAx-125,tAy-100,50,30,150,15,622,throttleA);
-    cab622.setThrottleDefaults(53,30,-20,-13);
-    cab622.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab622.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab622.setFunction(35,45,60,22,60,10,1,"Tailight",ButtonType.NORMAL,CabFunction.R_LIGHT);
-
-    cab8601 = new CabButton(tAx-125,tAy-50,50,30,150,15,8601,throttleA);
-    cab8601.setThrottleDefaults(77,46,-34,-30);
-    cab8601.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab8601.setFunction(35,15,60,22,60,10,0,"Lights",ButtonType.NORMAL,CabFunction.F_LIGHT,CabFunction.R_LIGHT);
-
-    cab6021 = new CabButton(tAx-125,tAy,50,30,150,15,6021,throttleA);
-    cab6021.setThrottleDefaults(50,25,-25,-15);
-    cab6021.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab6021.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab6021.setFunction(35,45,60,22,60,10,1,"Tailight",ButtonType.NORMAL,CabFunction.R_LIGHT);
-
-    cab54 = new CabButton(tAx-125,tAy+50,50,30,150,15,54,throttleA);
-    cab54.setThrottleDefaults(34,14,-5,-3);
-    cab54.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab54.setFunction(35,15,60,22,60,10,10,"Radiator\nFan",ButtonType.NORMAL);
-    cab54.setFunction(35,45,60,22,60,10,11,"Air Fill\n/Release",ButtonType.ONESHOT);
-    cab54.setFunction(35,75,60,22,60,10,14,"Passenger\nDep/Arr",ButtonType.ONESHOT);
-    cab54.setFunction(35,105,60,22,60,10,18,"City\nSounds",ButtonType.ONESHOT);
-    cab54.setFunction(35,135,60,22,60,10,19,"Farm\nSounds",ButtonType.ONESHOT);
-    cab54.setFunction(35,165,60,22,60,10,21,"Lumber\nMill",ButtonType.ONESHOT);
-    cab54.setFunction(35,195,60,22,60,10,20,"Industry\nSounds",ButtonType.ONESHOT);
-    cab54.setFunction(35,225,60,22,60,10,13,"Crossing\nHorn",ButtonType.ONESHOT,CabFunction.S_HORN);
-    cab54.setFunction(35,255,60,22,60,10,22,"Alternate\nHorn",ButtonType.NORMAL);
-    cab54.setFunction(35,285,60,22,60,10,8,"Mute",ButtonType.NORMAL);
-    cab54.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab54.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab54.setFunction(35,45,60,22,60,10,1,"Bell",ButtonType.NORMAL,CabFunction.BELL);
-    cab54.setFunction(35,75,60,22,60,10,2,"Horn",ButtonType.HOLD,CabFunction.HORN);
-    cab54.setFunction(35,105,60,22,60,10,3,"MARS\nLight",ButtonType.REVERSE,CabFunction.D_LIGHT);
-    cab54.setFunction(35,135,16,22,60,10,9,"1",ButtonType.NORMAL);
-    cab54.setFunction(14,135,16,22,60,10,5,"+",ButtonType.ONESHOT);
-    cab54.setFunction(56,135,16,22,60,10,6,"-",ButtonType.ONESHOT);
-    cab54.setFunction(35,165,60,22,60,10,15,"Freight\nDep/Arr",ButtonType.ONESHOT);
-    cab54.setFunction(35,195,60,22,60,10,16,"Facility\nShop",ButtonType.ONESHOT);
-    cab54.setFunction(35,225,60,22,60,10,17,"Crew\nRadio",ButtonType.ONESHOT);
-    cab54.setFunction(35,255,60,22,60,10,7,"Coupler",ButtonType.ONESHOT);
-    cab54.setFunction(35,285,60,22,60,10,4,"Dynamic\nBrake",ButtonType.NORMAL);
-    cab54.setFunction(35,315,60,22,60,10,12,"Brake\nSqueal",ButtonType.ONESHOT);
-
-    cab1202 = new CabButton(tAx-125,tAy+100,50,30,150,15,1202,throttleA);
-    cab1202.setThrottleDefaults(34,25,-24,-18);
-    cab1202.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab1202.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab1202.setFunction(35,45,60,22,60,10,1,"Tailight",ButtonType.NORMAL,CabFunction.R_LIGHT);
-
-    cab1506 = new CabButton(tAx-125,tAy+150,50,30,150,15,1506,throttleA);
-    cab1506.setThrottleDefaults(61,42,-30,-22);    
-    cab1506.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
-    cab1506.setFunction(35,15,60,22,60,10,1,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
-    cab1506.setFunction(35,45,60,22,60,10,0,"Tailight",ButtonType.NORMAL,CabFunction.R_LIGHT);
-    cab1506.setFunction(35,75,60,22,60,10,3,"D-Lights",ButtonType.NORMAL,CabFunction.D_LIGHT);
+    cab276 = new CabButton(tAx-125,tAy-150,50,30,150,15, 3,throttleA);
+    cab276.setThrottleDefaults(100,50,-50,-45);
+    cab276.functionButtonWindow(220,59,70,340,backgroundColor,backgroundColor);
+    cab276.setFunction(35,15,60,22,60,10,0,"Headlight",ButtonType.NORMAL,CabFunction.F_LIGHT);
+    cab276.setFunction(35,45,60,22,60,10,1,"Tailight",ButtonType.NORMAL,CabFunction.R_LIGHT);
     
 //  CREATE THE IMAGE WINDOW FOR THROTTLE A (must be done AFTER throttle A is defined above)
 
@@ -1026,13 +968,7 @@
     rButtonBridge.addTrack(bridgeI);
     rButtonBridge.addTrack(t8A);    
     
-    cab622.setSidingDefaults(rButton6,4,10);      // must set default sidings AFTER rButtons are defined above
-    cab6021.setSidingDefaults(rButton1,11,7);
-    cab54.setSidingDefaults(rButton2,11,8);
-    cab1506.setSidingDefaults(rButton3,11,9);
-    cab8601.setSidingDefaults(rButton4,11,12);
-    cab1202.setSidingDefaults(rButton5,11,13);
-    cab2004.setSidingDefaults(rButton7,5,14);
+    cab276.setSidingDefaults(rButton7,5,14);
     
   } // Initialize
 

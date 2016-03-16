@@ -170,7 +170,7 @@ class AutoPilotButton extends RectButton{
     
     cleaningCab.turnOn();                                  // turn on cleaning car
     cabList.clear();
-    cabList.add(cabsHM.get("Cab"+2004));                   // assumes cab 2004 is pulling cleaning car
+    cabList.add(cabsHM.get("Cab"+276));                   // assumes cab 276 is pulling cleaning car
     updateCabList();
     phase=100;
     phaseXML.setContent(str(phase));   
